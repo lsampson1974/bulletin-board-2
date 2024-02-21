@@ -73,6 +73,9 @@
       Edit post
     </h2>
 
+
+    <% if current_user != nil %>
+
     <form action="/modify_post/<%= @the_post.id %>"  method="post" >
       <div>
         <label for="title_box">
@@ -110,6 +113,13 @@
         Update post
       </button>
     </form>
+
+    <% else %> 
+
+        </div> Must be <a href="/users/sign_in"> signed in </a> to edit a post </div>
+
+    <% end %>
+
   </div>
 </div>
 
